@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Intern DTR Auto-Filler",
+  "version": "1.0",
+  "description": "Fills repetitive internship logs.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/auto_fill_logo.png"
+  },
+  "icons": {
+    "16": "images/auto_fill_logo.png",
+    "48": "images/auto_fill_logo.png",
+    "128": "images/auto_fill_logo.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://forms.office.com/*",
+        "https://forms.microsoft.com/*",
+        "https://forms.cloud.microsoft/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

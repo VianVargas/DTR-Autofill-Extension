@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 240px;
+        padding: 12px;
+        font-family: sans-serif;
+      }
+      h3 {
+        margin: 0 0 12px;
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #c8c8c8;
+        border-radius: 4px;
+        background: white;
+      }
+      button {
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        background: #0078d4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+      button:hover {
+        background: #005a9e;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Intern DTR Autofill</h3>
+    <label for="logType">Type of Log</label>
+    <select id="logType">
+      <option value="In">In</option>
+      <option value="Out">Out</option>
+      <option value="Start Break">Start Break</option>
+      <option value="End Break">End Break</option>
+      <option value="Start Lunch">Start Lunch</option>
+      <option value="End Lunch">End Lunch</option>
+    </select>
+    <button id="fillTimeIn">Fill DTR</button>
+    <script src="popup.js"></script>
+  </body>
+</html>
