@@ -1,56 +1,161 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <style>
+      :root {
+        color-scheme: light;
+        --bg: #000000;
+        --card: rgba(10, 10, 10, 0.96);
+        --text: #ffffff;
+        --muted: #ffd7ad;
+        --border: rgba(255, 255, 255, 0.16);
+        --accent: #ff7b00;
+        --accent-2: #ffb11a;
+        --accent-3: #ff5a00;
+        --accent-hover: #ff8d10;
+        --shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
       body {
-        width: 240px;
-        padding: 12px;
-        font-family: sans-serif;
+        margin: 0;
+        min-width: 280px;
+        font-family: "Segoe UI", sans-serif;
+        background: radial-gradient(
+          circle at top left,
+          #341500 0,
+          #130800 35%,
+          #000000 100%
+        );
+        color: var(--text);
       }
+
+      body {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(255, 177, 26, 0.12),
+            rgba(255, 255, 255, 0) 34%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(255, 90, 0, 0.08),
+            rgba(255, 177, 26, 0.03)
+          ),
+          var(--card);
+        box-shadow: var(--shadow);
+      }
+
       h3 {
-        margin: 0 0 12px;
+        margin: 0;
+        margin-bottom: 8px;
         text-align: center;
+        font-size: 18px;
+        line-height: 1.2;
       }
+
+      p {
+        margin: 6px 0 16px;
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+
       label {
         display: block;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         font-size: 13px;
         font-weight: 600;
       }
+
       select {
         width: 100%;
-        padding: 8px;
-        margin-bottom: 12px;
-        border: 1px solid #c8c8c8;
-        border-radius: 4px;
-        background: white;
+        padding: 11px 12px;
+        margin-bottom: 14px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--text);
+        outline: none;
+        transition:
+          border-color 0.18s ease,
+          box-shadow 0.18s ease;
       }
+
+      select:focus {
+        border-color: rgba(255, 177, 26, 0.9);
+        box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.2);
+      }
+
+      option {
+        background: #141414;
+        color: var(--text);
+      }
+
       button {
-        padding: 10px;
         width: 100%;
+        padding: 12px;
         cursor: pointer;
-        background: #0078d4;
-        color: white;
+        background: linear-gradient(
+          135deg,
+          var(--accent-3),
+          var(--accent),
+          var(--accent-2)
+        );
+        color: #fff;
         border: none;
-        border-radius: 4px;
+        border-radius: 14px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        box-shadow: 0 12px 26px rgba(255, 90, 0, 0.3);
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.18s ease;
       }
+
       button:hover {
-        background: #005a9e;
+        background: linear-gradient(
+          135deg,
+          #ff4f00,
+          var(--accent-hover),
+          #ffc43a
+        );
+        transform: translateY(-1px);
+        box-shadow: 0 14px 30px rgba(255, 90, 0, 0.38);
+      }
+
+      button:active {
+        transform: translateY(0);
       }
     </style>
   </head>
   <body>
-    <h3>Intern DTR Autofill</h3>
-    <label for="logType">Type of Log</label>
-    <select id="logType">
-      <option value="In">In</option>
-      <option value="Out">Out</option>
-      <option value="Start Break">Start Break</option>
-      <option value="End Break">End Break</option>
-      <option value="Start Lunch">Start Lunch</option>
-      <option value="End Lunch">End Lunch</option>
-    </select>
-    <button id="fillTimeIn">Fill DTR</button>
-    <script src="popup.js"></script>
+    <main class="card">
+      <h3>Intern DTR Autofill</h3>
+      <label for="logType">Type of Log</label>
+      <select id="logType">
+        <option value="In">In</option>
+        <option value="Out">Out</option>
+        <option value="Start Break">Start Break</option>
+        <option value="End Break">End Break</option>
+        <option value="Start Lunch">Start Lunch</option>
+        <option value="End Lunch">End Lunch</option>
+      </select>
+      <button id="fillTimeIn">Fill DTR</button>
+    </main>
+    <script src="script/popup.js"></script>
   </body>
 </html>
