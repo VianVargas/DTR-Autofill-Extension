@@ -20,7 +20,7 @@
         "https://forms.microsoft.com/*",
         "https://forms.cloud.microsoft/*"
       ],
-      "js": ["content.js"]
+      "js": ["config/config.js", "script/content.js"]
     }
   ]
 }
